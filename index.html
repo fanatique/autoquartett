@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Auto Quartett</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --player-a-color: #0d6efd;
+      --player-b-color: #dc3545;
+      --card-bg: #fffbe6;
+      --card-border: #bfa94e;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #1a472a;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    #app {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Force landscape hint */
+    .rotate-hint {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #1a472a;
+      color: white;
+      z-index: 9999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .rotate-hint i { font-size: 3rem; margin-bottom: 1rem; }
+
+    @media (orientation: portrait) {
+      .rotate-hint { display: flex; }
+      .game-container { display: none !important; }
+    }
+
+    /* Menu Screen */
+    .menu-screen {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 1rem;
+    }
+    .menu-screen h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .deck-card {
+      cursor: pointer;
+      max-width: 400px;
+      width: 100%;
+      transition: transform 0.2s;
+    }
+    .deck-card:hover { transform: scale(1.03); }
+    .deck-card img {
+      height: 150px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    /* Rules Screen */
+    .rules-screen {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    .rules-box {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 700px;
+      width: 100%;
+    }
+    .rules-box h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+    .rules-table td { padding: 0.25rem 0.75rem; color: white; }
+    .rules-table .badge { font-size: 0.75rem; }
+
+    /* Game Screen */
+    .game-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .game-header {
+      background: rgba(0,0,0,0.3);
+      color: white;
+      padding: 0.3rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .game-header .player-info {
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .game-header .player-a { background: var(--player-a-color); }
+    .game-header .player-b { background: var(--player-b-color); }
+    .game-header .active-player { box-shadow: 0 0 0 3px white; }
+
+    .game-area {
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+      padding: 0.5rem;
+      gap: 0.5rem;
+      min-height: 0;
+    }
+
+    /* Card Stacks (left/right) */
+    .stack-area {
+      flex: 0 0 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-stack {
+      width: 100px;
+      height: 140px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    }
+    .card-stack.player-a-stack {
+      background: linear-gradient(135deg, #1a56db, #0d6efd);
+      border: 3px solid #6ea8fe;
+    }
+    .card-stack.player-b-stack {
+      background: linear-gradient(135deg, #b02a37, #dc3545);
+      border: 3px solid #f1aeb5;
+    }
+    .card-stack.active-stack {
+      box-shadow: 0 0 0 4px white, 3px 3px 15px rgba(0,0,0,0.5);
+      animation: pulse 1.5s infinite;
+    }
+    .card-stack.clickable:hover { transform: scale(1.05); }
+    .card-stack .stack-count {
+      position: absolute;
+      bottom: -8px;
+      right: -8px;
+      background: white;
+      color: #333;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .stack-label {
+      color: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 4px white, 3px 3px 15px rgba(0,0,0,0.5); }
+      50% { box-shadow: 0 0 0 4px white, 0 0 20px rgba(255,255,255,0.4); }
+    }
+
+    /* Card Display Area (center) */
+    .cards-display {
+      flex: 1;
+      display: flex;
+      gap: 0.75rem;
+      align-items: stretch;
+      justify-content: center;
+      min-height: 0;
+    }
+
+    /* Quartett Card */
+    .quartett-card {
+      width: 260px;
+      max-width: 45%;
+      background: var(--card-bg);
+      border: 3px solid var(--card-border);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .quartett-card.card-a { border-color: var(--player-a-color); }
+    .quartett-card.card-b { border-color: var(--player-b-color); }
+
+    .card-image-wrap {
+      height: 35%;
+      min-height: 80px;
+      overflow: hidden;
+      background: #ddd;
+      position: relative;
+    }
+    .card-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-title-bar {
+      background: rgba(0,0,0,0.75);
+      color: white;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-stats {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0;
+    }
+    .card-stats table {
+      width: 100%;
+      font-size: 0.75rem;
+      margin: 0;
+    }
+    .card-stats table tr {
+      border-bottom: 1px solid #e0d9b0;
+      cursor: default;
+    }
+    .card-stats table tr.selectable {
+      cursor: pointer;
+    }
+    .card-stats table tr.selectable:hover {
+      background: #f0e8a0;
+    }
+    .card-stats table tr.selected {
+      background: #ffd700 !important;
+      font-weight: 700;
+    }
+    .card-stats table tr.winner-row {
+      background: #a8e6a8 !important;
+    }
+    .card-stats table tr.loser-row {
+      background: #f5a8a8 !important;
+    }
+    .card-stats table td {
+      padding: 0.25rem 0.4rem;
+      vertical-align: middle;
+    }
+    .card-stats table td:first-child {
+      font-weight: 500;
+      color: #555;
+    }
+    .card-stats table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+    .stat-better-icon {
+      font-size: 0.6rem;
+      margin-left: 0.2rem;
+    }
+
+    /* Flip Animation */
+    .flip-container {
+      perspective: 800px;
+      width: 260px;
+      max-width: 45%;
+    }
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-inner.flipped {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .flip-front {
+      background: linear-gradient(135deg, #2c5f8a, #1a3d5c);
+      border: 3px solid #6ea8fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+    }
+    .flip-front.front-b {
+      background: linear-gradient(135deg, #8a2c2c, #5c1a1a);
+      border-color: #f1aeb5;
+    }
+    .flip-front i { font-size: 2.5rem; margin-bottom: 0.3rem; }
+    .flip-front span { font-size: 0.8rem; font-weight: 600; }
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+    .flip-back .quartett-card {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    /* Result Overlay */
+    .result-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .result-box {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .result-box h2 { font-size: 1.5rem; }
+    .result-box .trophy { font-size: 3rem; }
+
+    /* Message bar */
+    .message-bar {
+      background: rgba(0,0,0,0.5);
+      color: white;
+      text-align: center;
+      padding: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .message-bar .btn { margin-left: 0.5rem; }
+
+    /* Stich (tie) alert */
+    .stich-alert {
+      background: #fff3cd;
+      color: #856404;
+      border: 2px solid #ffc107;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    /* Card move animation */
+    .card-won {
+      animation: cardWon 0.5s ease-in-out;
+    }
+    @keyframes cardWon {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    /* Game over */
+    .game-over-screen {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    .game-over-screen h1 { font-size: 2.5rem; }
+    .game-over-screen .trophy { font-size: 5rem; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Rotate Hint -->
+    <div class="rotate-hint">
+      <i class="bi bi-phone-landscape"></i>
+      <div>Bitte das Gerät ins Querformat drehen</div>
+    </div>
+
+    <!-- MENU SCREEN -->
+    <div v-if="screen === 'menu'" class="menu-screen">
+      <h1><i class="bi bi-car-front-fill"></i> Auto Quartett</h1>
+      <p class="text-light mb-3">Wähle ein Spiel:</p>
+      <div v-for="game in availableGames" :key="game.id" class="deck-card card mb-2" @click="selectGame(game)">
+        <img :src="game.coverImageUrl" class="card-img-top" :alt="game.title">
+        <div class="card-body py-2 px-3">
+          <h6 class="card-title mb-0">{{ game.title }}</h6>
+        </div>
+      </div>
+      <div v-if="loadingGames" class="text-light mt-3">
+        <div class="spinner-border spinner-border-sm"></div> Lade Spiele…
+      </div>
+    </div>
+
+    <!-- RULES SCREEN -->
+    <div v-if="screen === 'rules'" class="rules-screen">
+      <div class="rules-box">
+        <h2 class="text-center">{{ deckData.deck.title }}</h2>
+        <p class="text-light small text-center">
+          {{ completeCards.length }} Karten – je {{ Math.floor(completeCards.length / 2) }} pro Spieler
+        </p>
+        <h5 class="mt-3 mb-2">Spielregeln</h5>
+        <p class="small">
+          Jeder Spieler hat einen Kartenstapel. Der aktive Spieler dreht seine oberste Karte um
+          und wählt eine Kategorie. Dann wird die Karte des Gegners aufgedeckt.
+          Der bessere Wert gewinnt – der Gewinner bekommt beide Karten und spielt die nächste Runde.
+        </p>
+        <h5 class="mt-3 mb-2">Kategorien</h5>
+        <table class="rules-table">
+          <tr v-for="cat in deckData.categories" :key="cat.key">
+            <td>{{ cat.label }}</td>
+            <td><span class="badge" :class="cat.better === 'higher' ? 'bg-success' : 'bg-info'">{{ cat.better === 'higher' ? '↑ mehr gewinnt' : '↓ weniger gewinnt' }}</span></td>
+          </tr>
+        </table>
+        <div class="text-center mt-3">
+          <button class="btn btn-success btn-lg" @click="startGame()">
+            <i class="bi bi-play-fill"></i> Spiel starten
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div v-if="screen === 'game'" class="game-container">
+      <div class="game-header">
+        <div class="player-info player-a" :class="{ 'active-player': currentPlayer === 'A' }">
+          <i class="bi bi-person-fill"></i> Spieler A – {{ playerA.length }} Karten
+        </div>
+        <div>
+          <button class="btn btn-sm btn-outline-light" @click="backToMenu()">
+            <i class="bi bi-house-fill"></i> Menü
+          </button>
+        </div>
+        <div class="player-info player-b" :class="{ 'active-player': currentPlayer === 'B' }">
+          Spieler B – {{ playerB.length }} Karten <i class="bi bi-person-fill"></i>
+        </div>
+      </div>
+
+      <div class="game-area">
+        <!-- Player A Stack -->
+        <div class="stack-area">
+          <div class="card-stack player-a-stack"
+               :class="{ 'active-stack': phase === 'tap-stack' && currentPlayer === 'A', 'clickable': phase === 'tap-stack' && currentPlayer === 'A' }"
+               @click="tapStack('A')">
+            <i class="bi bi-stack"></i>
+            <span class="stack-count">{{ playerA.length }}</span>
+          </div>
+          <div class="stack-label">Spieler A</div>
+        </div>
+
+        <!-- Center Card Display -->
+        <div class="cards-display">
+          <!-- Player A Card -->
+          <div class="flip-container" v-if="phase !== 'tap-stack' || currentPlayer === 'A'">
+            <div class="flip-inner" :class="{ 'flipped': cardAFlipped }">
+              <div class="flip-front">
+                <i class="bi bi-car-front"></i>
+                <span>Spieler A</span>
+              </div>
+              <div class="flip-back">
+                <div class="quartett-card card-a" :class="{ 'card-won': wonAnimation === 'A' }">
+                  <div class="card-image-wrap" v-if="currentCardA">
+                    <img :src="currentCardA.imageUrl" :alt="currentCardA.title">
+                    <div class="card-title-bar">{{ currentCardA.title }}</div>
+                  </div>
+                  <div class="card-stats" v-if="currentCardA">
+                    <table>
+                      <tr v-for="cat in deckData.categories" :key="cat.key"
+                          :class="getRowClass('A', cat.key)"
+                          @click="selectCategory(cat.key)">
+                        <td>
+                          {{ cat.label }}
+                          <span class="stat-better-icon" :class="cat.better === 'higher' ? 'text-success' : 'text-info'">
+                            {{ cat.better === 'higher' ? '▲' : '▼' }}
+                          </span>
+                        </td>
+                        <td>{{ formatValue(currentCardA.stats[cat.key], cat) }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Waiting placeholder when other player taps -->
+          <div v-if="phase === 'tap-stack' && currentPlayer === 'A'" class="d-flex align-items-center justify-content-center" style="flex:1">
+            <div class="text-light text-center">
+              <i class="bi bi-hand-index-thumb" style="font-size:2rem;"></i>
+              <div class="mt-1 small">Spieler A, tippe auf deinen Stapel!</div>
+            </div>
+          </div>
+          <div v-if="phase === 'tap-stack' && currentPlayer === 'B'" class="d-flex align-items-center justify-content-center" style="flex:1">
+            <div class="text-light text-center">
+              <i class="bi bi-hand-index-thumb" style="font-size:2rem;"></i>
+              <div class="mt-1 small">Spieler B, tippe auf deinen Stapel!</div>
+            </div>
+          </div>
+
+          <!-- Player B Card -->
+          <div class="flip-container" v-if="phase !== 'tap-stack' || currentPlayer === 'B'">
+            <div class="flip-inner" :class="{ 'flipped': cardBFlipped }">
+              <div class="flip-front front-b">
+                <i class="bi bi-car-front"></i>
+                <span>Spieler B</span>
+              </div>
+              <div class="flip-back">
+                <div class="quartett-card card-b" :class="{ 'card-won': wonAnimation === 'B' }">
+                  <div class="card-image-wrap" v-if="currentCardB">
+                    <img :src="currentCardB.imageUrl" :alt="currentCardB.title">
+                    <div class="card-title-bar">{{ currentCardB.title }}</div>
+                  </div>
+                  <div class="card-stats" v-if="currentCardB">
+                    <table>
+                      <tr v-for="cat in deckData.categories" :key="cat.key"
+                          :class="getRowClass('B', cat.key)">
+                        <td>
+                          {{ cat.label }}
+                          <span class="stat-better-icon" :class="cat.better === 'higher' ? 'text-success' : 'text-info'">
+                            {{ cat.better === 'higher' ? '▲' : '▼' }}
+                          </span>
+                        </td>
+                        <td>{{ formatValue(currentCardB.stats[cat.key], cat) }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player B Stack -->
+        <div class="stack-area">
+          <div class="card-stack player-b-stack"
+               :class="{ 'active-stack': phase === 'tap-stack' && currentPlayer === 'B', 'clickable': phase === 'tap-stack' && currentPlayer === 'B' }"
+               @click="tapStack('B')">
+            <i class="bi bi-stack"></i>
+            <span class="stack-count">{{ playerB.length }}</span>
+          </div>
+          <div class="stack-label">Spieler B</div>
+        </div>
+      </div>
+
+      <!-- Message Bar -->
+      <div class="message-bar">
+        <!-- Tie alert -->
+        <span v-if="phase === 'stich'">
+          <span class="stich-alert">
+            <i class="bi bi-exclamation-triangle"></i>
+            Gleichstand bei „{{ selectedCategoryLabel }}"! Bitte wähle eine andere Kategorie.
+          </span>
+        </span>
+        <span v-else-if="phase === 'tap-stack'">
+          {{ currentPlayer === 'A' ? 'Spieler A' : 'Spieler B' }} ist dran – tippe auf den Stapel, um die Karte aufzudecken!
+        </span>
+        <span v-else-if="phase === 'select-category'">
+          {{ currentPlayer === 'A' ? 'Spieler A' : 'Spieler B' }}: Wähle eine Kategorie auf deiner Karte!
+        </span>
+        <span v-else-if="phase === 'show-result'">
+          <span v-if="roundWinner">
+            {{ roundWinner === 'A' ? 'Spieler A' : 'Spieler B' }} gewinnt mit „{{ selectedCategoryLabel }}"!
+            <button class="btn btn-sm btn-success" @click="nextRound()">
+              <i class="bi bi-arrow-right"></i> Weiter
+            </button>
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- GAME OVER SCREEN -->
+    <div v-if="screen === 'gameover'" class="game-over-screen">
+      <div class="trophy">🏆</div>
+      <h1>{{ gameWinner === 'A' ? 'Spieler A' : 'Spieler B' }} gewinnt!</h1>
+      <p class="lead text-light">Alle Karten eingesammelt!</p>
+      <div class="mt-3">
+        <button class="btn btn-success btn-lg me-2" @click="restartGame()">
+          <i class="bi bi-arrow-clockwise"></i> Nochmal spielen
+        </button>
+        <button class="btn btn-outline-light btn-lg" @click="backToMenu()">
+          <i class="bi bi-house-fill"></i> Menü
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const { createApp, ref, computed, nextTick } = Vue;
+
+    createApp({
+      setup() {
+        // --- State ---
+        const screen = ref('menu');
+        const availableGames = ref([]);
+        const loadingGames = ref(true);
+        const deckData = ref(null);
+
+        const playerA = ref([]);
+        const playerB = ref([]);
+        const currentPlayer = ref('A');
+
+        // Phases: tap-stack, select-category, stich, show-result
+        const phase = ref('tap-stack');
+
+        const currentCardA = ref(null);
+        const currentCardB = ref(null);
+        const cardAFlipped = ref(false);
+        const cardBFlipped = ref(false);
+        const selectedCategory = ref(null);
+        const roundWinner = ref(null);
+        const wonAnimation = ref(null);
+        const gameWinner = ref(null);
+
+        // --- Computed ---
+        const completeCards = computed(() => {
+          if (!deckData.value) return [];
+          return deckData.value.cards.filter(c => c.status === 'complete');
+        });
+
+        const selectedCategoryLabel = computed(() => {
+          if (!selectedCategory.value || !deckData.value) return '';
+          const cat = deckData.value.categories.find(c => c.key === selectedCategory.value);
+          return cat ? cat.label : '';
+        });
+
+        // --- Load Games ---
+        async function loadGames() {
+          loadingGames.value = true;
+          try {
+            const resp = await fetch('decks/index.json');
+            availableGames.value = await resp.json();
+          } catch (e) {
+            console.error('Failed to load games index:', e);
+          }
+          loadingGames.value = false;
+        }
+
+        async function selectGame(game) {
+          try {
+            const resp = await fetch('decks/' + game.file);
+            deckData.value = await resp.json();
+            screen.value = 'rules';
+          } catch (e) {
+            console.error('Failed to load deck:', e);
+          }
+        }
+
+        // --- Shuffle ---
+        function shuffle(arr) {
+          const a = [...arr];
+          for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+          }
+          return a;
+        }
+
+        // --- Start Game ---
+        function startGame() {
+          const cards = shuffle(completeCards.value);
+          const half = Math.floor(cards.length / 2);
+          playerA.value = cards.slice(0, half);
+          playerB.value = cards.slice(half, half * 2);
+
+          currentPlayer.value = Math.random() < 0.5 ? 'A' : 'B';
+          phase.value = 'tap-stack';
+          cardAFlipped.value = false;
+          cardBFlipped.value = false;
+          currentCardA.value = null;
+          currentCardB.value = null;
+          selectedCategory.value = null;
+          roundWinner.value = null;
+          wonAnimation.value = null;
+          gameWinner.value = null;
+
+          screen.value = 'game';
+        }
+
+        function restartGame() {
+          startGame();
+        }
+
+        // --- Tap Stack ---
+        function tapStack(player) {
+          if (phase.value !== 'tap-stack') return;
+          if (player !== currentPlayer.value) return;
+
+          if (currentPlayer.value === 'A') {
+            currentCardA.value = playerA.value[0];
+            currentCardB.value = playerB.value[0];
+          } else {
+            currentCardA.value = playerA.value[0];
+            currentCardB.value = playerB.value[0];
+          }
+
+          // Flip the current player's card
+          if (currentPlayer.value === 'A') {
+            nextTick(() => { cardAFlipped.value = true; });
+          } else {
+            nextTick(() => { cardBFlipped.value = true; });
+          }
+
+          phase.value = 'select-category';
+        }
+
+        // --- Select Category ---
+        function selectCategory(catKey) {
+          if (phase.value !== 'select-category' && phase.value !== 'stich') return;
+
+          // Only the active player's card is clickable
+          const valA = currentCardA.value.stats[catKey];
+          const valB = currentCardB.value.stats[catKey];
+
+          // Check for tie
+          if (valA === valB) {
+            selectedCategory.value = catKey;
+            phase.value = 'stich';
+            return;
+          }
+
+          selectedCategory.value = catKey;
+
+          // Flip the opponent's card
+          if (currentPlayer.value === 'A') {
+            nextTick(() => { cardBFlipped.value = true; });
+          } else {
+            nextTick(() => { cardAFlipped.value = true; });
+          }
+
+          // Determine winner
+          const cat = deckData.value.categories.find(c => c.key === catKey);
+          let winner;
+          if (cat.better === 'higher') {
+            winner = valA > valB ? 'A' : 'B';
+          } else {
+            winner = valA < valB ? 'A' : 'B';
+          }
+
+          roundWinner.value = winner;
+          setTimeout(() => { wonAnimation.value = winner; }, 600);
+          phase.value = 'show-result';
+        }
+
+        // --- Next Round ---
+        function nextRound() {
+          const cardA = playerA.value.shift();
+          const cardB = playerB.value.shift();
+
+          if (roundWinner.value === 'A') {
+            playerA.value.push(cardA, cardB);
+          } else {
+            playerB.value.push(cardA, cardB);
+          }
+
+          // Check game over
+          if (playerA.value.length === 0) {
+            gameWinner.value = 'B';
+            screen.value = 'gameover';
+            return;
+          }
+          if (playerB.value.length === 0) {
+            gameWinner.value = 'A';
+            screen.value = 'gameover';
+            return;
+          }
+
+          // Reset for next round
+          currentPlayer.value = roundWinner.value;
+          phase.value = 'tap-stack';
+          cardAFlipped.value = false;
+          cardBFlipped.value = false;
+          currentCardA.value = null;
+          currentCardB.value = null;
+          selectedCategory.value = null;
+          roundWinner.value = null;
+          wonAnimation.value = null;
+        }
+
+        // --- Row styling ---
+        function getRowClass(cardSide, catKey) {
+          const classes = [];
+
+          // Selectable only on active player's card during selection
+          if ((phase.value === 'select-category' || phase.value === 'stich') &&
+              ((currentPlayer.value === 'A' && cardSide === 'A') ||
+               (currentPlayer.value === 'B' && cardSide === 'B'))) {
+            classes.push('selectable');
+          }
+
+          if (selectedCategory.value === catKey) {
+            classes.push('selected');
+            if (phase.value === 'show-result' && roundWinner.value) {
+              if (cardSide === roundWinner.value) {
+                classes.push('winner-row');
+              } else {
+                classes.push('loser-row');
+              }
+            }
+          }
+
+          return classes.join(' ');
+        }
+
+        // --- Format values ---
+        function formatValue(val, cat) {
+          if (val === null || val === undefined) return '–';
+          const locale = deckData.value?.deck?.locale || 'de-DE';
+          const formatted = val.toLocaleString(locale);
+          return formatted + ' ' + cat.unit;
+        }
+
+        // --- Navigation ---
+        function backToMenu() {
+          screen.value = 'menu';
+          deckData.value = null;
+        }
+
+        // --- Init ---
+        loadGames();
+
+        return {
+          screen,
+          availableGames,
+          loadingGames,
+          deckData,
+          playerA,
+          playerB,
+          currentPlayer,
+          phase,
+          currentCardA,
+          currentCardB,
+          cardAFlipped,
+          cardBFlipped,
+          selectedCategory,
+          selectedCategoryLabel,
+          roundWinner,
+          wonAnimation,
+          gameWinner,
+          completeCards,
+          selectGame,
+          startGame,
+          restartGame,
+          tapStack,
+          selectCategory,
+          nextRound,
+          getRowClass,
+          formatValue,
+          backToMenu,
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

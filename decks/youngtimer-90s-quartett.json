@@ -1,0 +1,573 @@
+{
+  "deck": {
+    "id": "youngtimer-90s-quartett",
+    "title": "Youngtimer Quartett – 90er Jahre",
+    "coverImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche%20993%20Carrera%20%2852686444437%29.jpg",
+    "titleImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche%20993%20Carrera%20%2852686444437%29.jpg",
+    "locale": "de-DE"
+  },
+  "categories": [
+    {
+      "key": "hubraum_cm3",
+      "label": "Hubraum",
+      "unit": "cm³",
+      "better": "higher"
+    },
+    {
+      "key": "leistung_ps",
+      "label": "Leistung",
+      "unit": "PS",
+      "better": "higher"
+    },
+    {
+      "key": "drehmoment_nm",
+      "label": "Drehmoment",
+      "unit": "Nm",
+      "better": "higher"
+    },
+    {
+      "key": "hoechstgeschwindigkeit_kmh",
+      "label": "Höchstgeschwindigkeit",
+      "unit": "km/h",
+      "better": "higher"
+    },
+    {
+      "key": "null_bis_100_s",
+      "label": "0–100 km/h",
+      "unit": "s",
+      "better": "lower"
+    },
+    {
+      "key": "gewicht_kg",
+      "label": "Gewicht",
+      "unit": "kg",
+      "better": "lower"
+    },
+    {
+      "key": "marktwert_eur",
+      "label": "Marktwert heute",
+      "unit": "EUR",
+      "better": "higher"
+    },
+    {
+      "key": "verbrauch_l_pro_100km",
+      "label": "Verbrauch",
+      "unit": "l/100 km",
+      "better": "lower"
+    }
+  ],
+  "cards": [
+    {
+      "id": "YT01",
+      "title": "Volkswagen Golf III 2.0 (115 PS)",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Golf%20Mk3.JPG",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1984,
+        "leistung_ps": 115,
+        "drehmoment_nm": 170,
+        "hoechstgeschwindigkeit_kmh": 198,
+        "null_bis_100_s": 10.1,
+        "gewicht_kg": 1089,
+        "marktwert_eur": 7492,
+        "verbrauch_l_pro_100km": 8.7
+      }
+    },
+    {
+      "id": "YT02",
+      "title": "Nissan 200 SX (S14) 2.0 Turbo",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Nissan%20200SX%20S14.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1998,
+        "leistung_ps": 200,
+        "drehmoment_nm": 265,
+        "hoechstgeschwindigkeit_kmh": 235,
+        "null_bis_100_s": 7.5,
+        "gewicht_kg": 1350,
+        "marktwert_eur": 18176,
+        "verbrauch_l_pro_100km": 8.8
+      }
+    },
+    {
+      "id": "YT03",
+      "title": "Honda NSX I Coupe 3.0 VTEC (NA1)",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20nsx.png",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 2977,
+        "leistung_ps": 274,
+        "drehmoment_nm": 284,
+        "hoechstgeschwindigkeit_kmh": 270,
+        "null_bis_100_s": 5.9,
+        "gewicht_kg": 1370,
+        "marktwert_eur": 140002,
+        "verbrauch_l_pro_100km": 10.0
+      }
+    },
+    {
+      "id": "YT04",
+      "title": "Lotus Elise S1 1.8",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1998%20Lotus%20Elise%20S1.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1796,
+        "leistung_ps": 120,
+        "drehmoment_nm": 165,
+        "hoechstgeschwindigkeit_kmh": 202,
+        "null_bis_100_s": 5.9,
+        "gewicht_kg": 690,
+        "marktwert_eur": 23874,
+        "verbrauch_l_pro_100km": 7.7
+      }
+    },
+    {
+      "id": "YT05",
+      "title": "Ford Escort RS Cosworth",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ford%20Escort%20RS%20Cosworth.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1993,
+        "leistung_ps": 220,
+        "drehmoment_nm": 290,
+        "hoechstgeschwindigkeit_kmh": 225,
+        "null_bis_100_s": 6.1,
+        "gewicht_kg": 1320,
+        "marktwert_eur": 66409,
+        "verbrauch_l_pro_100km": 10.0
+      }
+    },
+    {
+      "id": "YT06",
+      "title": "Saab 9000 CS Aero 2.3",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1994%20Saab%209000%20Aero%20front.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 2290,
+        "leistung_ps": 225,
+        "drehmoment_nm": 342,
+        "hoechstgeschwindigkeit_kmh": 240,
+        "null_bis_100_s": 6.9,
+        "gewicht_kg": 1440,
+        "marktwert_eur": 5554,
+        "verbrauch_l_pro_100km": 8.8
+      }
+    },
+    {
+      "id": "YT07",
+      "title": "Volvo 850 T5 2.3",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volvo%20850%20T5%20R%202.3%20%2817460067695%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 2319,
+        "leistung_ps": 225,
+        "drehmoment_nm": 300,
+        "hoechstgeschwindigkeit_kmh": 240,
+        "null_bis_100_s": 7.4,
+        "gewicht_kg": 1399,
+        "marktwert_eur": 11414,
+        "verbrauch_l_pro_100km": 9.4
+      }
+    },
+    {
+      "id": "YT08",
+      "title": "Fiat Coupé 2.0 20V Turbo",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2000%20Fiat%20Coupe%2020v%20Turbo.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1998,
+        "leistung_ps": 220,
+        "drehmoment_nm": 310,
+        "hoechstgeschwindigkeit_kmh": 250,
+        "null_bis_100_s": 6.3,
+        "gewicht_kg": 1310,
+        "marktwert_eur": 11196,
+        "verbrauch_l_pro_100km": 11.0
+      }
+    },
+    {
+      "id": "YT09",
+      "title": "Audi RS2 Avant 2.2 Turbo",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Audi%20RS2%20Avant%20%2813938925183%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 2226,
+        "leistung_ps": 315,
+        "drehmoment_nm": 410,
+        "hoechstgeschwindigkeit_kmh": 262,
+        "null_bis_100_s": 5.4,
+        "gewicht_kg": 1595,
+        "marktwert_eur": 80000,
+        "verbrauch_l_pro_100km": 11.0
+      }
+    },
+    {
+      "id": "YT10",
+      "title": "BMW 328i (E36) 2.8",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20328i%20E36%20%2814084169614%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT11",
+      "title": "Volkswagen Corrado VR6 2.9",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Corrado%20VR6.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT12",
+      "title": "Porsche 911 (993) Carrera",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche%20993%20Carrera%20%2852686444437%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT13",
+      "title": "Porsche Boxster (986) 2.5",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche%20Boxster%20986.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT14",
+      "title": "Opel Calibra V6 2.5",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/CalibraV6Rosberg.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT15",
+      "title": "Peugeot 306 GTI-6",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1998%20Peugeot%20306%20GTi%206%20%2852558921712%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT16",
+      "title": "Renault Clio Williams",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault%20Clio%20Williams%20%2840114405095%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT17",
+      "title": "Alfa Romeo GTV (916) 3.0 V6 24V",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Alfa%20Romeo%20GTV%20916%20coup%C3%A9.JPG",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT18",
+      "title": "Alfa Romeo 156 2.5 V6",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1999%20Alfa%20Romeo%20156%202.5%20V6.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT19",
+      "title": "Mazda MX-5 (NB) 1.8",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mazda%20MX-5%20NB%20-%20ja%20Roadster%20-a.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT20",
+      "title": "Honda Prelude 2.2 VTEC",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20Prelude%20%2838846767465%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT21",
+      "title": "Honda Integra Type R (DC2)",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20Integra%20Type%20R%20DC2%201998.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT22",
+      "title": "Audi S2 Coupé 2.2 Turbo",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1996%20Audi%20S2%20Coupe%20%2813666047724%29%20%28cropped%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT23",
+      "title": "BMW M3 (E36) 3.2",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20M3%20Coup%C3%A9%20E36%20%287179121970%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT24",
+      "title": "BMW Z3 2.8",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20Z3%202.8%20%286155838277%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT25",
+      "title": "Mercedes-Benz C280 (W202)",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2000%20Mercedes-Benz%20C280.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT26",
+      "title": "Mercedes-Benz SLK 230 Kompressor (R170)",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Slk%20230%20kompressor%201999%20R170.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT27",
+      "title": "Audi S4 (B5) 2.7 Biturbo",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2000%20Audi%20S4%20B5.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT28",
+      "title": "Toyota Supra (JZA80) 3.0 Twin Turbo",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Supra%20JZA80%2C%20Bangladesh.%20%2845485919051%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT29",
+      "title": "Toyota MR2 (SW20) 2.0",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20MR2%20%28SW20%29%20ca%201995%20at%20Snetterton%202008.JPG",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT30",
+      "title": "Subaru Impreza WRX STI",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tuned%20Subaru%20Impreza%20WRX%20STi%20%28GC8%29%20at%20night%20front.JPG",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT31",
+      "title": "Mitsubishi Lancer Evolution VI",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1999%20Mitsubishi%20Lancer%20Evolution%20VI%201.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    },
+    {
+      "id": "YT32",
+      "title": "Jaguar XK8 4.0 V8",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1997%20Jaguar%20XK8%20X100%20Convertible%20%2830488410404%29.jpg",
+      "status": "draft",
+      "stats": {
+        "hubraum_cm3": null,
+        "leistung_ps": null,
+        "drehmoment_nm": null,
+        "hoechstgeschwindigkeit_kmh": null,
+        "null_bis_100_s": null,
+        "gewicht_kg": null,
+        "marktwert_eur": null,
+        "verbrauch_l_pro_100km": null
+      }
+    }
+  ]
+}
