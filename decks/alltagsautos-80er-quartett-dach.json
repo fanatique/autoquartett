@@ -1,0 +1,381 @@
+{
+  "deck": {
+    "id": "alltagsautos-80er-quartett-dach",
+    "title": "Alltagsautos Quartett – 80er Jahre (DACH)",
+    "coverImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/VW%20Golf%20II%20front%2020080206.jpg",
+    "titleImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/VW%20Golf%20II%20front%2020080206.jpg",
+    "locale": "de-DE"
+  },
+  "categories": [
+    {
+      "key": "hubraum_cm3",
+      "label": "Hubraum",
+      "unit": "cm³",
+      "better": "higher"
+    },
+    {
+      "key": "leistung_ps",
+      "label": "Leistung",
+      "unit": "PS",
+      "better": "higher"
+    },
+    {
+      "key": "drehmoment_nm",
+      "label": "Drehmoment",
+      "unit": "Nm",
+      "better": "higher"
+    },
+    {
+      "key": "hoechstgeschwindigkeit_kmh",
+      "label": "Höchstgeschwindigkeit",
+      "unit": "km/h",
+      "better": "higher"
+    },
+    {
+      "key": "null_bis_100_s",
+      "label": "0–100 km/h",
+      "unit": "s",
+      "better": "lower"
+    },
+    {
+      "key": "gewicht_kg",
+      "label": "Gewicht",
+      "unit": "kg",
+      "better": "lower"
+    },
+    {
+      "key": "marktwert_eur",
+      "label": "Marktwert heute",
+      "unit": "EUR",
+      "better": "higher"
+    },
+    {
+      "key": "verbrauch_l_pro_100km",
+      "label": "Verbrauch",
+      "unit": "l/100 km",
+      "better": "lower"
+    }
+  ],
+  "cards": [
+    {
+      "id": "E80-01",
+      "title": "Citroën 2CV 6 Special",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Citroen%202cv%206%20special%201.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 602,
+        "leistung_ps": 29,
+        "drehmoment_nm": 39,
+        "hoechstgeschwindigkeit_kmh": 113,
+        "null_bis_100_s": 28.5,
+        "gewicht_kg": 585,
+        "marktwert_eur": 8900,
+        "verbrauch_l_pro_100km": 6.2
+      }
+    },
+    {
+      "id": "E80-02",
+      "title": "Trabant 601",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Trabant601deLuxe.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 594,
+        "leistung_ps": 26,
+        "drehmoment_nm": 54,
+        "hoechstgeschwindigkeit_kmh": 100,
+        "null_bis_100_s": 21.0,
+        "gewicht_kg": 615,
+        "marktwert_eur": 7600,
+        "verbrauch_l_pro_100km": 7.0
+      }
+    },
+    {
+      "id": "E80-03",
+      "title": "Fiat Panda 45",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fiat%20Panda%2045%20CL.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 903,
+        "leistung_ps": 45,
+        "drehmoment_nm": 65,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 16.0,
+        "gewicht_kg": 715,
+        "marktwert_eur": 6200,
+        "verbrauch_l_pro_100km": 5.8
+      }
+    },
+    {
+      "id": "E80-04",
+      "title": "Fiat Uno 45",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fiat120%20TrojaPalace%20K05.%20FIAT%20Uno%2045%2C%201985.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 903,
+        "leistung_ps": 45,
+        "drehmoment_nm": 65,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 15.8,
+        "gewicht_kg": 710,
+        "marktwert_eur": 4300,
+        "verbrauch_l_pro_100km": 5.6
+      }
+    },
+    {
+      "id": "E80-05",
+      "title": "Volkswagen Polo II 1.0",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/VW%20Polo%202%20front%2020071026.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1043,
+        "leistung_ps": 45,
+        "drehmoment_nm": 76,
+        "hoechstgeschwindigkeit_kmh": 145,
+        "null_bis_100_s": 20.5,
+        "gewicht_kg": 730,
+        "marktwert_eur": 4100,
+        "verbrauch_l_pro_100km": 5.9
+      }
+    },
+    {
+      "id": "E80-06",
+      "title": "Ford Fiesta I 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1976-82%20Ford%20Fiesta%201.1%20L%20%2810329968884%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1117,
+        "leistung_ps": 54,
+        "drehmoment_nm": 79,
+        "hoechstgeschwindigkeit_kmh": 145,
+        "null_bis_100_s": 15.2,
+        "gewicht_kg": 720,
+        "marktwert_eur": 4100,
+        "verbrauch_l_pro_100km": 6.3
+      }
+    },
+    {
+      "id": "E80-07",
+      "title": "Opel Corsa A 1.0",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1984%20Opel%20Corsa%201.0%20S.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 993,
+        "leistung_ps": 45,
+        "drehmoment_nm": 68,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 17.2,
+        "gewicht_kg": 740,
+        "marktwert_eur": 3800,
+        "verbrauch_l_pro_100km": 5.9
+      }
+    },
+    {
+      "id": "E80-08",
+      "title": "Peugeot 205 1.0 GL",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1990%20Peugeot%20205%201.1.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 954,
+        "leistung_ps": 45,
+        "drehmoment_nm": 73,
+        "hoechstgeschwindigkeit_kmh": 143,
+        "null_bis_100_s": 16.8,
+        "gewicht_kg": 740,
+        "marktwert_eur": 5200,
+        "verbrauch_l_pro_100km": 5.7
+      }
+    },
+    {
+      "id": "E80-09",
+      "title": "Renault 5 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault5tl.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1108,
+        "leistung_ps": 45,
+        "drehmoment_nm": 79,
+        "hoechstgeschwindigkeit_kmh": 135,
+        "null_bis_100_s": 17.9,
+        "gewicht_kg": 760,
+        "marktwert_eur": 4700,
+        "verbrauch_l_pro_100km": 6.4
+      }
+    },
+    {
+      "id": "E80-10",
+      "title": "Renault 11 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault_11.JPG",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1108,
+        "leistung_ps": 48,
+        "drehmoment_nm": 82,
+        "hoechstgeschwindigkeit_kmh": 137,
+        "null_bis_100_s": 17.6,
+        "gewicht_kg": 830,
+        "marktwert_eur": 3200,
+        "verbrauch_l_pro_100km": 6.6
+      }
+    },
+    {
+      "id": "E80-11",
+      "title": "Ford Escort III 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ford%20Escort%203%20with%205%20doors.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1117,
+        "leistung_ps": 54,
+        "drehmoment_nm": 79,
+        "hoechstgeschwindigkeit_kmh": 148,
+        "null_bis_100_s": 16.1,
+        "gewicht_kg": 835,
+        "marktwert_eur": 3600,
+        "verbrauch_l_pro_100km": 6.5
+      }
+    },
+    {
+      "id": "E80-12",
+      "title": "Volkswagen Golf I 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Golf%20Mk1%20%2802%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1093,
+        "leistung_ps": 50,
+        "drehmoment_nm": 78,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 16.3,
+        "gewicht_kg": 750,
+        "marktwert_eur": 6100,
+        "verbrauch_l_pro_100km": 6.5
+      }
+    },
+    {
+      "id": "E80-13",
+      "title": "Volkswagen Golf II 1.3",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/VW%20Golf%20II%20front%2020080206.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1272,
+        "leistung_ps": 55,
+        "drehmoment_nm": 96,
+        "hoechstgeschwindigkeit_kmh": 151,
+        "null_bis_100_s": 16.7,
+        "gewicht_kg": 845,
+        "marktwert_eur": 5400,
+        "verbrauch_l_pro_100km": 6.7
+      }
+    },
+    {
+      "id": "E80-14",
+      "title": "Opel Kadett D 1.2 N",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1982%20Opel%20Kadett%20D%2012N%20Automaat%20%288854995110%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1196,
+        "leistung_ps": 53,
+        "drehmoment_nm": 88,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 15.7,
+        "gewicht_kg": 855,
+        "marktwert_eur": 4200,
+        "verbrauch_l_pro_100km": 6.6
+      }
+    },
+    {
+      "id": "E80-15",
+      "title": "Opel Kadett E 1.3 N",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/OPEL-KADETT-E.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1297,
+        "leistung_ps": 60,
+        "drehmoment_nm": 94,
+        "hoechstgeschwindigkeit_kmh": 160,
+        "null_bis_100_s": 15.0,
+        "gewicht_kg": 875,
+        "marktwert_eur": 3900,
+        "verbrauch_l_pro_100km": 6.8
+      }
+    },
+    {
+      "id": "E80-16",
+      "title": "Volkswagen Passat B2 1.3",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/VW%20Passat%20Stufenheck%20in%20Trier%2020120910.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1272,
+        "leistung_ps": 60,
+        "drehmoment_nm": 95,
+        "hoechstgeschwindigkeit_kmh": 152,
+        "null_bis_100_s": 16.8,
+        "gewicht_kg": 920,
+        "marktwert_eur": 3300,
+        "verbrauch_l_pro_100km": 7.7
+      }
+    },
+    {
+      "id": "E80-17",
+      "title": "Audi 80 B3 1.6",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Audi%2080%20B3%20Typ%2089%20HN.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1595,
+        "leistung_ps": 70,
+        "drehmoment_nm": 118,
+        "hoechstgeschwindigkeit_kmh": 168,
+        "null_bis_100_s": 14.1,
+        "gewicht_kg": 1025,
+        "marktwert_eur": 4700,
+        "verbrauch_l_pro_100km": 7.2
+      }
+    },
+    {
+      "id": "E80-18",
+      "title": "Mercedes-Benz 200 (W123)",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz%20W123%20.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1988,
+        "leistung_ps": 109,
+        "drehmoment_nm": 160,
+        "hoechstgeschwindigkeit_kmh": 175,
+        "null_bis_100_s": 13.5,
+        "gewicht_kg": 1280,
+        "marktwert_eur": 9900,
+        "verbrauch_l_pro_100km": 9.7
+      }
+    },
+    {
+      "id": "E80-19",
+      "title": "Mercedes-Benz 200 D (W124)",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes%20W124%20front%2020080228.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1997,
+        "leistung_ps": 72,
+        "drehmoment_nm": 123,
+        "hoechstgeschwindigkeit_kmh": 160,
+        "null_bis_100_s": 19.5,
+        "gewicht_kg": 1330,
+        "marktwert_eur": 6200,
+        "verbrauch_l_pro_100km": 7.0
+      }
+    },
+    {
+      "id": "E80-20",
+      "title": "BMW 316 (E30)",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20316%20E30%20DSC%200710.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1766,
+        "leistung_ps": 90,
+        "drehmoment_nm": 140,
+        "hoechstgeschwindigkeit_kmh": 175,
+        "null_bis_100_s": 12.8,
+        "gewicht_kg": 1030,
+        "marktwert_eur": 8700,
+        "verbrauch_l_pro_100km": 8.1
+      }
+    }
+  ]
+}
