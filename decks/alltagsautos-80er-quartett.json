@@ -1,0 +1,381 @@
+{
+  "deck": {
+    "id": "alltagsautos-80er-quartett",
+    "title": "Alltagsautos Quartett – 80er Jahre",
+    "coverImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Golf%20Mk1%20%2802%29.jpg",
+    "titleImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Golf%20Mk1%20%2802%29.jpg",
+    "locale": "de-DE"
+  },
+  "categories": [
+    {
+      "key": "hubraum_cm3",
+      "label": "Hubraum",
+      "unit": "cm³",
+      "better": "higher"
+    },
+    {
+      "key": "leistung_ps",
+      "label": "Leistung",
+      "unit": "PS",
+      "better": "higher"
+    },
+    {
+      "key": "drehmoment_nm",
+      "label": "Drehmoment",
+      "unit": "Nm",
+      "better": "higher"
+    },
+    {
+      "key": "hoechstgeschwindigkeit_kmh",
+      "label": "Höchstgeschwindigkeit",
+      "unit": "km/h",
+      "better": "higher"
+    },
+    {
+      "key": "null_bis_100_s",
+      "label": "0–100 km/h",
+      "unit": "s",
+      "better": "lower"
+    },
+    {
+      "key": "gewicht_kg",
+      "label": "Gewicht",
+      "unit": "kg",
+      "better": "lower"
+    },
+    {
+      "key": "marktwert_eur",
+      "label": "Marktwert heute",
+      "unit": "EUR",
+      "better": "higher"
+    },
+    {
+      "key": "verbrauch_l_pro_100km",
+      "label": "Verbrauch",
+      "unit": "l/100 km",
+      "better": "lower"
+    }
+  ],
+  "cards": [
+    {
+      "id": "E80-01",
+      "title": "Citroën 2CV 6 Special",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Citroen%202cv%206%20special%201.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 602,
+        "leistung_ps": 29,
+        "drehmoment_nm": 39,
+        "hoechstgeschwindigkeit_kmh": 113,
+        "null_bis_100_s": 28.5,
+        "gewicht_kg": 585,
+        "marktwert_eur": 8900,
+        "verbrauch_l_pro_100km": 6.2
+      }
+    },
+    {
+      "id": "E80-02",
+      "title": "Peugeot 104 1.0 GL",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Peugeot%20104%20GL%20%2815436439521%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 954,
+        "leistung_ps": 45,
+        "drehmoment_nm": 72,
+        "hoechstgeschwindigkeit_kmh": 128,
+        "null_bis_100_s": 18.8,
+        "gewicht_kg": 780,
+        "marktwert_eur": 3300,
+        "verbrauch_l_pro_100km": 6.6
+      }
+    },
+    {
+      "id": "E80-03",
+      "title": "Talbot Samba 1.0 LS",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1983%20Talbot%20Samba%201.0%20LS%20%2831621839052%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 954,
+        "leistung_ps": 45,
+        "drehmoment_nm": 72,
+        "hoechstgeschwindigkeit_kmh": 135,
+        "null_bis_100_s": 17.5,
+        "gewicht_kg": 740,
+        "marktwert_eur": 2900,
+        "verbrauch_l_pro_100km": 6.1
+      }
+    },
+    {
+      "id": "E80-04",
+      "title": "Austin Metro 1.0",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1981%20Austin%20Metro.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 998,
+        "leistung_ps": 44,
+        "drehmoment_nm": 71,
+        "hoechstgeschwindigkeit_kmh": 130,
+        "null_bis_100_s": 18.2,
+        "gewicht_kg": 750,
+        "marktwert_eur": 3500,
+        "verbrauch_l_pro_100km": 6.4
+      }
+    },
+    {
+      "id": "E80-05",
+      "title": "Fiat Panda 45",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fiat%20Panda%2045%20CL.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 903,
+        "leistung_ps": 45,
+        "drehmoment_nm": 65,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 16.0,
+        "gewicht_kg": 715,
+        "marktwert_eur": 6200,
+        "verbrauch_l_pro_100km": 5.8
+      }
+    },
+    {
+      "id": "E80-06",
+      "title": "Ford Fiesta I 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1976-82%20Ford%20Fiesta%201.1%20L%20%2810329968884%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1117,
+        "leistung_ps": 54,
+        "drehmoment_nm": 79,
+        "hoechstgeschwindigkeit_kmh": 145,
+        "null_bis_100_s": 15.2,
+        "gewicht_kg": 720,
+        "marktwert_eur": 4100,
+        "verbrauch_l_pro_100km": 6.3
+      }
+    },
+    {
+      "id": "E80-07",
+      "title": "Opel Corsa A 1.0",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1984%20Opel%20Corsa%201.0%20S.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 993,
+        "leistung_ps": 45,
+        "drehmoment_nm": 68,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 17.2,
+        "gewicht_kg": 740,
+        "marktwert_eur": 3800,
+        "verbrauch_l_pro_100km": 5.9
+      }
+    },
+    {
+      "id": "E80-08",
+      "title": "Renault 5 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Renault5tl.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1108,
+        "leistung_ps": 45,
+        "drehmoment_nm": 79,
+        "hoechstgeschwindigkeit_kmh": 135,
+        "null_bis_100_s": 17.9,
+        "gewicht_kg": 760,
+        "marktwert_eur": 4700,
+        "verbrauch_l_pro_100km": 6.4
+      }
+    },
+    {
+      "id": "E80-09",
+      "title": "Peugeot 205 1.0 GL",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1990%20Peugeot%20205%201.1.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 954,
+        "leistung_ps": 45,
+        "drehmoment_nm": 73,
+        "hoechstgeschwindigkeit_kmh": 143,
+        "null_bis_100_s": 16.8,
+        "gewicht_kg": 740,
+        "marktwert_eur": 5200,
+        "verbrauch_l_pro_100km": 5.7
+      }
+    },
+    {
+      "id": "E80-10",
+      "title": "Fiat Uno 45",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fiat120%20TrojaPalace%20K05.%20FIAT%20Uno%2045%2C%201985.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 903,
+        "leistung_ps": 45,
+        "drehmoment_nm": 65,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 15.8,
+        "gewicht_kg": 710,
+        "marktwert_eur": 4300,
+        "verbrauch_l_pro_100km": 5.6
+      }
+    },
+    {
+      "id": "E80-11",
+      "title": "Nissan Micra K10 1.0",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1987%20Nissan%20Micra%201.0%20L%20%2813935272164%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 988,
+        "leistung_ps": 50,
+        "drehmoment_nm": 74,
+        "hoechstgeschwindigkeit_kmh": 145,
+        "null_bis_100_s": 15.4,
+        "gewicht_kg": 730,
+        "marktwert_eur": 3900,
+        "verbrauch_l_pro_100km": 5.5
+      }
+    },
+    {
+      "id": "E80-12",
+      "title": "Seat Ibiza I 0.9",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SEAT%20Ibiza%201%20GL%201.2.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 903,
+        "leistung_ps": 44,
+        "drehmoment_nm": 64,
+        "hoechstgeschwindigkeit_kmh": 129,
+        "null_bis_100_s": 18.9,
+        "gewicht_kg": 850,
+        "marktwert_eur": 2800,
+        "verbrauch_l_pro_100km": 6.7
+      }
+    },
+    {
+      "id": "E80-13",
+      "title": "Mazda 121 I 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1987-1989%20Mazda%20121%20%28DA%29%20Deluxe%203-door%20hatchback%20%2815419142697%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1138,
+        "leistung_ps": 54,
+        "drehmoment_nm": 83,
+        "hoechstgeschwindigkeit_kmh": 150,
+        "null_bis_100_s": 14.8,
+        "gewicht_kg": 725,
+        "marktwert_eur": 3400,
+        "verbrauch_l_pro_100km": 5.8
+      }
+    },
+    {
+      "id": "E80-14",
+      "title": "Daihatsu Charade G11 1.0",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1985-1987%20Daihatsu%20Charade%20%28G11%29%20CX%205-door%20hatchback%2001.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 993,
+        "leistung_ps": 52,
+        "drehmoment_nm": 76,
+        "hoechstgeschwindigkeit_kmh": 145,
+        "null_bis_100_s": 15.0,
+        "gewicht_kg": 692,
+        "marktwert_eur": 3600,
+        "verbrauch_l_pro_100km": 5.4
+      }
+    },
+    {
+      "id": "E80-15",
+      "title": "Volkswagen Golf I 1.1",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Golf%20Mk1%20%2802%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1093,
+        "leistung_ps": 50,
+        "drehmoment_nm": 78,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 16.3,
+        "gewicht_kg": 750,
+        "marktwert_eur": 6100,
+        "verbrauch_l_pro_100km": 6.5
+      }
+    },
+    {
+      "id": "E80-16",
+      "title": "Opel Kadett D 1.2 N",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1982%20Opel%20Kadett%20D%2012N%20Automaat%20%288854995110%29.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1196,
+        "leistung_ps": 53,
+        "drehmoment_nm": 88,
+        "hoechstgeschwindigkeit_kmh": 140,
+        "null_bis_100_s": 15.7,
+        "gewicht_kg": 855,
+        "marktwert_eur": 4200,
+        "verbrauch_l_pro_100km": 6.6
+      }
+    },
+    {
+      "id": "E80-17",
+      "title": "Skoda 105 L",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Orange%20%C5%A0koda%20105%20L%20at%20Legendy%202018%20in%20Prague.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1046,
+        "leistung_ps": 46,
+        "drehmoment_nm": 74,
+        "hoechstgeschwindigkeit_kmh": 130,
+        "null_bis_100_s": 19.5,
+        "gewicht_kg": 875,
+        "marktwert_eur": 3100,
+        "verbrauch_l_pro_100km": 7.0
+      }
+    },
+    {
+      "id": "E80-18",
+      "title": "Skoda Favorit 135 L",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Skoda%20Favorit%20135%20L.JPG",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1289,
+        "leistung_ps": 58,
+        "drehmoment_nm": 94,
+        "hoechstgeschwindigkeit_kmh": 150,
+        "null_bis_100_s": 14.9,
+        "gewicht_kg": 875,
+        "marktwert_eur": 3700,
+        "verbrauch_l_pro_100km": 6.8
+      }
+    },
+    {
+      "id": "E80-19",
+      "title": "Citroën BX 14",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1984%20Citroen%20BX%2014%201.4.jpg",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1360,
+        "leistung_ps": 62,
+        "drehmoment_nm": 104,
+        "hoechstgeschwindigkeit_kmh": 155,
+        "null_bis_100_s": 13.8,
+        "gewicht_kg": 885,
+        "marktwert_eur": 4900,
+        "verbrauch_l_pro_100km": 6.9
+      }
+    },
+    {
+      "id": "E80-20",
+      "title": "Fiat Regata 70",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Fiat%20Regata%20berlina.JPG",
+      "status": "complete",
+      "stats": {
+        "hubraum_cm3": 1301,
+        "leistung_ps": 68,
+        "drehmoment_nm": 102,
+        "hoechstgeschwindigkeit_kmh": 155,
+        "null_bis_100_s": 13.4,
+        "gewicht_kg": 890,
+        "marktwert_eur": 3600,
+        "verbrauch_l_pro_100km": 7.1
+      }
+    }
+  ]
+}
