@@ -33,25 +33,9 @@
       flex-direction: column;
     }
 
-    /* Force landscape hint */
-    .rotate-hint {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: #1a472a;
-      color: white;
-      z-index: 9999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-    .rotate-hint i { font-size: 3rem; margin-bottom: 1rem; }
-
-    @media (orientation: portrait) {
-      .rotate-hint { display: flex; }
-      .game-container { display: none !important; }
-    }
+    /* Orientation helpers */
+    .portrait-only { display: none !important; }
+    .landscape-only { display: inline; }
 
     /* Menu Screen */
     .menu-screen {
@@ -458,16 +442,175 @@
     }
     .game-over-screen h1 { font-size: 2.5rem; }
     .game-over-screen .trophy { font-size: 5rem; }
+
+    /* ===================== Portrait Mode ===================== */
+    @media (orientation: portrait) {
+      .landscape-only { display: none !important; }
+      .portrait-only { display: inline !important; }
+
+      .game-header { padding: 0.25rem 0.5rem; font-size: 0.75rem; }
+      .game-header .player-info { padding: 0.15rem 0.5rem; font-size: 0.75rem; }
+
+      .stack-area { display: none !important; }
+
+      .game-area { flex-direction: column; align-items: center; }
+
+      .game-container[data-phase="tap-stack"] .game-area,
+      .game-container[data-phase="show-result"] .game-area,
+      .game-container.remote-opponent-turn:not([data-phase="show-result"]) .game-area {
+        display: none !important;
+      }
+
+      .game-container[data-phase="show-result"] .message-bar { display: none; }
+
+      .cards-display { width: 100%; }
+
+      .flip-container { width: 90vw; max-width: 360px; }
+      .quartett-card { width: 100%; max-width: 100%; }
+
+      .game-container[data-current="A"] .flip-b,
+      .game-container[data-current="B"] .flip-a { display: none !important; }
+
+      .card-stats table { font-size: 0.85rem; }
+      .card-stats table td { padding: 0.35rem 0.5rem; }
+    }
+
+    /* Portrait tap area */
+    .portrait-tap-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+    }
+    .portrait-tap-area .card-stack {
+      width: 140px;
+      height: 196px;
+      font-size: 2rem;
+    }
+
+    /* Duel panel */
+    .duel-panel {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: duelSlideUp 0.4s ease-out;
+    }
+    @keyframes duelSlideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .duel-panel-content {
+      width: 92vw;
+      max-width: 400px;
+      max-height: 90vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .duel-thumbnails {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .duel-thumb {
+      flex: 1;
+      max-width: 140px;
+      border-radius: 10px;
+      overflow: hidden;
+      opacity: 0.55;
+      transition: all 0.3s;
+      border: 3px solid transparent;
+    }
+    .duel-thumb.duel-winner {
+      opacity: 1;
+      border-color: #ffd700;
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+    }
+    .duel-thumb img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+    }
+    .duel-thumb-name {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: white;
+      padding: 0.2rem 0.4rem;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .player-a-bg { background: var(--player-a-color); }
+    .player-b-bg { background: var(--player-b-color); }
+    .duel-vs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .duel-table-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .duel-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+    .duel-table tr { border-bottom: 1px solid #e0d9b0; }
+    .duel-table tr:last-child { border-bottom: none; }
+    .duel-table td { padding: 0.5rem; vertical-align: middle; }
+    .duel-table .duel-val-a {
+      text-align: right;
+      font-weight: 600;
+      width: 30%;
+      color: var(--player-a-color);
+    }
+    .duel-table .duel-cat {
+      text-align: center;
+      color: #666;
+      font-weight: 500;
+      width: 40%;
+      font-size: 0.75rem;
+    }
+    .duel-table .duel-val-b {
+      text-align: left;
+      font-weight: 600;
+      width: 30%;
+      color: var(--player-b-color);
+    }
+    .duel-table tr.duel-selected {
+      background: #fff3cd;
+    }
+    .duel-table tr.duel-selected .duel-winner-cell {
+      color: #198754;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .duel-table tr.duel-selected .duel-loser-cell {
+      color: #dc3545;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+    .duel-action {
+      text-align: center;
+      padding: 0.75rem 0;
+    }
   </style>
 </head>
 <body>
   <div id="app">
-    <!-- Rotate Hint -->
-    <div class="rotate-hint">
-      <i class="bi bi-phone-landscape"></i>
-      <div>Bitte das Gerät ins Querformat drehen</div>
-    </div>
-
     <!-- MENU SCREEN -->
     <div v-if="screen === 'menu'" class="menu-screen">
       <div class="menu-header">
@@ -538,7 +681,7 @@
     </div>
 
     <!-- GAME SCREEN -->
-    <div v-if="screen === 'game'" class="game-container">
+    <div v-if="screen === 'game'" class="game-container" :data-phase="phase" :data-current="currentPlayer" :class="{ 'remote-opponent-turn': gameMode === 'remote' && currentPlayer !== myRole }">
       <!-- Waiting for opponent overlay -->
       <div v-if="waitingForOpponent" class="result-overlay" style="z-index:200;">
         <div class="result-box">
@@ -557,18 +700,46 @@
 
       <div class="game-header">
         <div class="player-info player-a" :class="{ 'active-player': currentPlayer === 'A' }">
-          <i class="bi bi-person-fill"></i> Spieler A{{ gameMode === 'remote' && myRole === 'A' ? ' (Du)' : '' }} – {{ playerA.length }} Karten
+          <i class="bi bi-person-fill"></i>
+          <span class="landscape-only"> Spieler A{{ gameMode === 'remote' && myRole === 'A' ? ' (Du)' : '' }} – {{ playerA.length }} Karten</span>
+          <span class="portrait-only"> A{{ gameMode === 'remote' && myRole === 'A' ? ' (Du)' : '' }} · {{ playerA.length }}</span>
         </div>
         <div>
-          <span v-if="gameMode === 'remote'" class="badge bg-primary me-2">
+          <span v-if="gameMode === 'remote'" class="badge bg-primary me-2 landscape-only">
             <i class="bi bi-globe"></i> Online
           </span>
           <button class="btn btn-sm btn-outline-light" @click="backToMenu()">
-            <i class="bi bi-house-fill"></i> Menü
+            <i class="bi bi-house-fill"></i><span class="landscape-only"> Menü</span>
           </button>
         </div>
         <div class="player-info player-b" :class="{ 'active-player': currentPlayer === 'B' }">
-          Spieler B{{ gameMode === 'remote' && myRole === 'B' ? ' (Du)' : '' }} – {{ playerB.length }} Karten <i class="bi bi-person-fill"></i>
+          <span class="landscape-only">Spieler B{{ gameMode === 'remote' && myRole === 'B' ? ' (Du)' : '' }} – {{ playerB.length }} Karten </span>
+          <span class="portrait-only">{{ playerB.length }} · B{{ gameMode === 'remote' && myRole === 'B' ? ' (Du)' : '' }} </span>
+          <i class="bi bi-person-fill"></i>
+        </div>
+      </div>
+
+      <!-- Portrait: Tap Stack -->
+      <div v-if="isPortrait && phase === 'tap-stack' && (gameMode !== 'remote' || currentPlayer === myRole)" class="portrait-tap-area">
+        <div class="card-stack"
+             :class="[currentPlayer === 'A' ? 'player-a-stack' : 'player-b-stack', 'active-stack', 'clickable']"
+             @click="tapStack(currentPlayer)">
+          <i class="bi bi-stack"></i>
+          <span class="stack-count">{{ currentPlayer === 'A' ? playerA.length : playerB.length }}</span>
+        </div>
+        <div class="stack-label mt-2">{{ currentPlayer === 'A' ? 'Spieler A' : 'Spieler B' }}</div>
+        <div class="text-light text-center mt-3">
+          <i class="bi bi-hand-index-thumb" style="font-size:1.5rem;"></i>
+          <div class="mt-1 small">Tippe auf den Stapel!</div>
+        </div>
+      </div>
+
+      <!-- Portrait: Remote opponent waiting -->
+      <div v-if="isPortrait && gameMode === 'remote' && currentPlayer !== myRole && phase !== 'show-result'" class="portrait-tap-area">
+        <i class="bi bi-hourglass-split text-light" style="font-size:3rem;"></i>
+        <div class="text-light text-center mt-2">
+          <span v-if="phase === 'tap-stack'">Gegner ist am Zug – warte...</span>
+          <span v-else>Gegner wählt eine Kategorie...</span>
         </div>
       </div>
 
@@ -587,7 +758,7 @@
         <!-- Center Card Display -->
         <div class="cards-display">
           <!-- Player A Card -->
-          <div class="flip-container" v-if="phase !== 'tap-stack' || currentPlayer === 'A'">
+          <div class="flip-container flip-a" v-if="phase !== 'tap-stack' || currentPlayer === 'A'">
             <div class="flip-inner" :class="{ 'flipped': cardAFlipped }">
               <div class="flip-front">
                 <i class="bi bi-question-lg"></i>
@@ -634,7 +805,7 @@
           </div>
 
           <!-- Player B Card -->
-          <div class="flip-container" v-if="phase !== 'tap-stack' || currentPlayer === 'B'">
+          <div class="flip-container flip-b" v-if="phase !== 'tap-stack' || currentPlayer === 'B'">
             <div class="flip-inner" :class="{ 'flipped': cardBFlipped }">
               <div class="flip-front front-b">
                 <i class="bi bi-question-lg"></i>
@@ -676,6 +847,53 @@
             <span class="stack-count">{{ playerB.length }}</span>
           </div>
           <div class="stack-label">Spieler B</div>
+        </div>
+      </div>
+
+      <!-- Portrait: Duel Panel -->
+      <div v-if="isPortrait && phase === 'show-result' && currentCardA && currentCardB" class="duel-panel">
+        <div class="duel-panel-content">
+          <div class="duel-thumbnails">
+            <div class="duel-thumb" :class="{ 'duel-winner': roundWinner === 'A' }">
+              <img :src="currentCardA.imageUrl" :alt="currentCardA.title">
+              <div class="duel-thumb-name player-a-bg">{{ currentCardA.title }}</div>
+            </div>
+            <div class="duel-vs">
+              <span v-if="roundWinner" class="badge fs-6" :class="roundWinner === 'A' ? 'bg-primary' : 'bg-danger'">
+                {{ roundWinner === 'A' ? 'Spieler A' : 'Spieler B' }} gewinnt!
+              </span>
+              <span v-else class="badge bg-secondary fs-6">VS</span>
+            </div>
+            <div class="duel-thumb" :class="{ 'duel-winner': roundWinner === 'B' }">
+              <img :src="currentCardB.imageUrl" :alt="currentCardB.title">
+              <div class="duel-thumb-name player-b-bg">{{ currentCardB.title }}</div>
+            </div>
+          </div>
+          <div class="duel-table-wrap">
+            <table class="duel-table">
+              <tr v-for="cat in deckData.categories" :key="cat.key"
+                  :class="getDuelRowClass(cat.key)">
+                <td class="duel-val-a" :class="getDuelCellClass('A', cat.key)">{{ formatValue(currentCardA.stats[cat.key], cat) }}</td>
+                <td class="duel-cat">
+                  {{ cat.label }}
+                  <span class="stat-better-icon" :class="cat.better === 'higher' ? 'text-success' : 'text-info'">
+                    {{ cat.better === 'higher' ? '▲' : '▼' }}
+                  </span>
+                </td>
+                <td class="duel-val-b" :class="getDuelCellClass('B', cat.key)">{{ formatValue(currentCardB.stats[cat.key], cat) }}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="duel-action">
+            <button v-if="gameMode !== 'remote' || roundWinner === myRole"
+                    class="btn btn-success btn-lg"
+                    @click="tapStack(roundWinner)">
+              <i class="bi bi-arrow-right-circle"></i> Nächste Runde
+            </button>
+            <div v-else class="text-light">
+              <i class="bi bi-hourglass-split"></i> Warte auf Gegner...
+            </div>
+          </div>
         </div>
       </div>
 
@@ -775,6 +993,11 @@
         const shareUrl = ref('');
         let pollTimer = null;
         let pollVersion = 0;
+
+        const isPortrait = ref(window.matchMedia('(orientation: portrait)').matches);
+        const portraitMql = window.matchMedia('(orientation: portrait)');
+        const onOrientationChange = (e) => { isPortrait.value = e.matches; };
+        portraitMql.addEventListener('change', onOrientationChange);
 
         // --- Computed ---
         const completeCards = computed(() => {
@@ -1012,6 +1235,15 @@
           return classes.join(' ');
         }
 
+        function getDuelRowClass(catKey) {
+          return selectedCategory.value === catKey ? 'duel-selected' : '';
+        }
+
+        function getDuelCellClass(side, catKey) {
+          if (selectedCategory.value !== catKey || !roundWinner.value) return '';
+          return side === roundWinner.value ? 'duel-winner-cell' : 'duel-loser-cell';
+        }
+
         // --- Format values ---
         function formatValue(val, cat) {
           if (val === null || val === undefined) return '–';
@@ -1228,7 +1460,7 @@
         }
 
         window.addEventListener('hashchange', parseHash);
-        onUnmounted(() => { stopPolling(); window.removeEventListener('hashchange', parseHash); });
+        onUnmounted(() => { stopPolling(); window.removeEventListener('hashchange', parseHash); portraitMql.removeEventListener('change', onOrientationChange); });
 
         // --- Init ---
         loadGames().then(() => {
@@ -1259,6 +1491,7 @@
           wonAnimation,
           gameWinner,
           completeCards,
+          isPortrait,
           gameMode,
           sessionId,
           myRole,
@@ -1275,6 +1508,8 @@
           selectCategory,
           nextRound,
           getRowClass,
+          getDuelRowClass,
+          getDuelCellClass,
           formatValue,
           backToMenu,
           copyShareUrl,
