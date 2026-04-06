@@ -3,18 +3,28 @@
     "id": "youngtimer-90s-quartett",
     "title": "Youngtimer Quartett – 90er Jahre",
     "coverImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Porsche%20993%20Carrera%20%2852686444437%29.jpg",
-    "file": "youngtimer-90s-quartett.json"
+    "file": "youngtimer-90s-quartett.json",
+    "type": "autos"
   },
   {
     "id": "alltagsautos-80er-quartett-europa",
     "title": "Alltagsautos Quartett – 80er Jahre (Europa)",
     "coverImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Golf%20Mk1%20%2802%29.jpg",
-    "file": "alltagsautos-80er-quartett-europa.json"
+    "file": "alltagsautos-80er-quartett-europa.json",
+    "type": "autos"
   },
   {
     "id": "alltagsautos-80er-quartett-dach",
     "title": "Alltagsautos Quartett – 80er Jahre (DACH)",
     "coverImageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/VW%20Golf%20II%20front%2020080206.jpg",
-    "file": "alltagsautos-80er-quartett-dach.json"
+    "file": "alltagsautos-80er-quartett-dach.json",
+    "type": "autos"
+  },
+  {
+    "id": "floorballschlaeger-quartett-2025",
+    "title": "Floorballschläger Quartett",
+    "coverImageUrl": "https://static.necy.eu/i/w/203838_1800x900.webp",
+    "file": "floorballschlaeger-quartett-2025.json",
+    "type": "sport"
   }
 ]

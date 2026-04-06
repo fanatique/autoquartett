@@ -1,0 +1,273 @@
+{
+  "deck": {
+    "id": "floorballschlaeger-quartett-2025",
+    "title": "Floorballschläger Quartett",
+    "coverImageUrl": "https://static.necy.eu/i/w/203838_1800x900.webp",
+    "titleImageUrl": "https://static.necy.eu/i/w/203838_1800x900.webp",
+    "locale": "de-DE"
+  },
+  "categories": [
+    {
+      "key": "flex_mm",
+      "label": "Flex",
+      "unit": "mm",
+      "better": "lower"
+    },
+    {
+      "key": "gewicht_g",
+      "label": "Gewicht",
+      "unit": "g",
+      "better": "lower"
+    },
+    {
+      "key": "carbon_anteil_prozent",
+      "label": "Carbon-Anteil",
+      "unit": "%",
+      "better": "higher"
+    },
+    {
+      "key": "kellen_konkavitaet_mm",
+      "label": "Kellen-Konkavität",
+      "unit": "mm",
+      "better": "higher"
+    },
+    {
+      "key": "iff_zertifiziert",
+      "label": "IFF-zertifiziert",
+      "unit": "0/1",
+      "better": "higher"
+    },
+    {
+      "key": "preis_eur",
+      "label": "Preis",
+      "unit": "EUR",
+      "better": "higher"
+    }
+  ],
+  "cards": [
+    {
+      "id": "FB01",
+      "title": "Eurostick Icebreaker IFF",
+      "imageUrl": "https://static.necy.eu/i/g/60x60/145771.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 30,
+        "gewicht_g": 250,
+        "carbon_anteil_prozent": 0,
+        "kellen_konkavitaet_mm": 5.5,
+        "iff_zertifiziert": 1,
+        "preis_eur": 24.9
+      }
+    },
+    {
+      "id": "FB02",
+      "title": "Salming Hawk RE Flex 32",
+      "imageUrl": "https://static.necy.eu/i/w/121523_170x170.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 32,
+        "gewicht_g": 254,
+        "carbon_anteil_prozent": 15,
+        "kellen_konkavitaet_mm": 6.5,
+        "iff_zertifiziert": 1,
+        "preis_eur": 33.74
+      }
+    },
+    {
+      "id": "FB03",
+      "title": "Oxdog ULTRAFORCE 30",
+      "imageUrl": "https://static.necy.eu/i/w/208997_1800x900.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 30,
+        "gewicht_g": 255,
+        "carbon_anteil_prozent": 20,
+        "kellen_konkavitaet_mm": 9.5,
+        "iff_zertifiziert": 1,
+        "preis_eur": 37.72
+      }
+    },
+    {
+      "id": "FB04",
+      "title": "Fat Pipe FAST 33 CTRL FH2 PURPLE",
+      "imageUrl": "https://static.necy.eu/i/w/205782_1800x900.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 33,
+        "gewicht_g": 235,
+        "carbon_anteil_prozent": 35,
+        "kellen_konkavitaet_mm": 8.0,
+        "iff_zertifiziert": 1,
+        "preis_eur": 59.9
+      }
+    },
+    {
+      "id": "FB05",
+      "title": "Fat Pipe CORE 27 LOW KICK CTRL",
+      "imageUrl": "https://static.necy.eu/i/w/121503_170x170.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 27,
+        "gewicht_g": 220,
+        "carbon_anteil_prozent": 50,
+        "kellen_konkavitaet_mm": 8.8,
+        "iff_zertifiziert": 1,
+        "preis_eur": 89.9
+      }
+    },
+    {
+      "id": "FB06",
+      "title": "Fat Pipe SLICKS 27 limited edt.",
+      "imageUrl": "https://static.necy.eu/i/w/192400_1800x900.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 27,
+        "gewicht_g": 198,
+        "carbon_anteil_prozent": 100,
+        "kellen_konkavitaet_mm": 8.5,
+        "iff_zertifiziert": 1,
+        "preis_eur": 129.9
+      }
+    },
+    {
+      "id": "FB07",
+      "title": "Zone AIR/ONE \"ONE\" 27 (THIN) raw/copper",
+      "imageUrl": "https://static.necy.eu/i/w/203838_1800x900.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 27,
+        "gewicht_g": 164,
+        "carbon_anteil_prozent": 100,
+        "kellen_konkavitaet_mm": 8.0,
+        "iff_zertifiziert": 1,
+        "preis_eur": 219.9
+      }
+    },
+    {
+      "id": "FB08",
+      "title": "Zone AIR/ONE AL 27 raw/gold",
+      "imageUrl": "https://static.necy.eu/i/w/192510_1800x900.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 27,
+        "gewicht_g": 179,
+        "carbon_anteil_prozent": 95,
+        "kellen_konkavitaet_mm": 8.0,
+        "iff_zertifiziert": 1,
+        "preis_eur": 159.9
+      }
+    },
+    {
+      "id": "FB09",
+      "title": "Zone AIR/ONE SPEED PL 3K 29 raw/yellow",
+      "imageUrl": "https://static.necy.eu/i/g/60x60/202623.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 29,
+        "gewicht_g": 185,
+        "carbon_anteil_prozent": 100,
+        "kellen_konkavitaet_mm": 8.0,
+        "iff_zertifiziert": 1,
+        "preis_eur": 189.9
+      }
+    },
+    {
+      "id": "FB10",
+      "title": "Unihoc UNILITE EVOLAB FL 29 ice grey",
+      "imageUrl": "https://static.necy.eu/i/w/121522_170x170.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 29,
+        "gewicht_g": 165,
+        "carbon_anteil_prozent": 100,
+        "kellen_konkavitaet_mm": 8.0,
+        "iff_zertifiziert": 1,
+        "preis_eur": 174.79
+      }
+    },
+    {
+      "id": "FB11",
+      "title": "Unihoc UNILITE MAX 27 BLACK/SILVER CLASSIC",
+      "imageUrl": "https://static.necy.eu/i/w/121522_170x170.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 27,
+        "gewicht_g": 180,
+        "carbon_anteil_prozent": 100,
+        "kellen_konkavitaet_mm": 8.0,
+        "iff_zertifiziert": 1,
+        "preis_eur": 114.83
+      }
+    },
+    {
+      "id": "FB12",
+      "title": "Oxdog ULTRALIGHT HES 27 OVAL",
+      "imageUrl": "https://static.necy.eu/i/w/208259_1800x900.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 27,
+        "gewicht_g": 190,
+        "carbon_anteil_prozent": 95,
+        "kellen_konkavitaet_mm": 9.0,
+        "iff_zertifiziert": 1,
+        "preis_eur": 179.9
+      }
+    },
+    {
+      "id": "FB13",
+      "title": "Oxdog ULTRALIGHT HES 31 TQ SWEOVAL MB",
+      "imageUrl": "https://static.necy.eu/i/w/208259_1800x900.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 31,
+        "gewicht_g": 196,
+        "carbon_anteil_prozent": 95,
+        "kellen_konkavitaet_mm": 8.5,
+        "iff_zertifiziert": 1,
+        "preis_eur": 169.9
+      }
+    },
+    {
+      "id": "FB14",
+      "title": "Oxdog QUICK POWER HES 25 FP 108 OVAL MBC",
+      "imageUrl": "https://static.necy.eu/i/w/208259_1800x900.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 25,
+        "gewicht_g": 188,
+        "carbon_anteil_prozent": 100,
+        "kellen_konkavitaet_mm": 9.0,
+        "iff_zertifiziert": 0,
+        "preis_eur": 219.9
+      }
+    },
+    {
+      "id": "FB15",
+      "title": "Salming Q-Series Carbon Pro 2.0 Q1 F27",
+      "imageUrl": "https://static.necy.eu/i/w/121523_170x170.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 27,
+        "gewicht_g": 187,
+        "carbon_anteil_prozent": 95,
+        "kellen_konkavitaet_mm": 7.2,
+        "iff_zertifiziert": 1,
+        "preis_eur": 107.94
+      }
+    },
+    {
+      "id": "FB16",
+      "title": "Salming Q-Series Carbon Pro Trident F27",
+      "imageUrl": "https://static.necy.eu/i/w/121523_170x170.webp",
+      "status": "complete",
+      "stats": {
+        "flex_mm": 27,
+        "gewicht_g": 185,
+        "carbon_anteil_prozent": 95,
+        "kellen_konkavitaet_mm": 8.0,
+        "iff_zertifiziert": 1,
+        "preis_eur": 179.9
+      }
+    }
+  ]
+}
